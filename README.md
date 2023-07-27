@@ -75,7 +75,7 @@ A python tool to automatically translate lang files into other languages
 If running from the command line there are a few arguments you can use.  
 Example:  
 ```
-foo> python mct.py -i en_us.json -l fr
+foo> python mct.py -i en_us.json -l french
 ```
 
 ### Arguments
