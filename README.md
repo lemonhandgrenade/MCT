@@ -89,7 +89,7 @@ foo> python mct.py -i en_us.json -l french
 
 When mct.py is run without any arguments it'll prompt a GUI to appear which has buttons for, selecting the lang file, selecting the language and converting. 
 
-![gui](https://github.com/lemonhandgrenade/MCT/assets/36611142/6145ab07-89b5-4360-a773-526ea0badcf9)
+![gui](https://github.com/lemonhandgrenade/MCT/assets/36611142/68b83dc6-0b01-45d6-b94f-49a2b20c9cca)
 
 # Installation
 
