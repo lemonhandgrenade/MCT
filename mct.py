@@ -119,7 +119,6 @@ if not len(sys.argv) > 1:	# Run Without Args
 	window.columnconfigure(0, weight=1, pad=0)
 	window.columnconfigure(1, weight=8, pad=0)
 	window.rowconfigure(2,pad=0,weight=1)
-	window.rowconfigure(3,pad=0)
 
 	def Getlang():
 		filetypes = (('Json file', '*.json'), ('All Files', '*.*'))
@@ -138,9 +137,9 @@ if not len(sys.argv) > 1:	# Run Without Args
 
 	def convert():
 		if os.path.isfile(filename.name):
-			Evaluate(filename.name, clicked.get(), True, True, "safe")
+			Evaluate(filename.name, clicked.get(), True, True, "safe" if isUnsafe.get() == 0 else "unsafe")
 
-	selection = tk.Button(window, text='Select Lang File', command=Getlang, borderwidth=3).grid(column=0, columnspan=2, row=0, padx=(5,5), pady=(5,0),sticky="WSE")
+	selection = tk.Button(window, text='Select Lang File', command=Getlang, borderwidth=3).grid(column=0, columnspan=2, row=0, padx=(5,5), pady=(5,0), sticky="WSE")
 
 	tk.Label(window, text="Translate To Language:").grid(column=0, row=1, padx=(5,5), pady=(5,5),sticky="WN")
 	clicked = tk.StringVar()
@@ -151,7 +150,10 @@ if not len(sys.argv) > 1:	# Run Without Args
 	textDisp.config(bg="#10141c", fg="#bfbdb6")
 	textDisp.grid(column=0, columnspan=2, row=2, padx=(5,5), pady=(5,5),sticky="WNSE")
 	
-	tk.Button(window, text='Convert', command=convert, borderwidth=3).grid(column=0, columnspan=2, row=3, padx=(5,5), pady=(5,5),sticky="ENSW")
+	isUnsafe = tk.IntVar()
+	tk.Checkbutton(window, text='Unsafe Mode', variable=isUnsafe, onvalue=1, offvalue=0).grid(column=0, row=3, padx=(5,5), pady=0, sticky="WN")
+
+	tk.Button(window, text='Convert', command=convert, borderwidth=3).grid(column=0, columnspan=2, row=4, padx=(5,5), pady=(5,5), sticky="ENSW")
 
 	window.mainloop()
 else:
