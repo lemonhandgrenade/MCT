@@ -7,6 +7,8 @@ A python tool to automatically translate lang files into other languages
 
 ## Supported Languages
 
+Currently 58 languages are supported to translate to.  
+
 <details><summary>Open to see supported languages</summary>
 
  - Afrikaans
@@ -80,9 +82,12 @@ foo> python mct.py -i en_us.json -l french
 
 ### Arguments
 
-`-h, --help`: Shows the help dialogue with all arguments.  
+`-h, --help`: Shows the help dialogue with all optional arguments.  
 `-i <file>, --input <file>`: Path to the language file pre written. eg: ...\assets\minecraft\lang\en_us.json  
 `-l <language>, --language <language>`: The desired language to translate to. See [Supported Languages](#supported-languages) for the list of current languages.  
+`-m <method>, --method <method>`: The method that should be used when translating. "safe", "unsafe"  
+Safe translates line by line and is far more accurate than unsafe however takes a lot longer.  
+Unsafe batch translates the entire value range at once. However, in doing so translations can be very inaccurate but overall extermely fast.  
 `-d, --debug`: Outputs the current line being translated beside the progress bar whilst translating.  
 
 ## GUI
